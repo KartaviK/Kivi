@@ -5,15 +5,8 @@ namespace Kartavik\Kivi;
 /**
  * Class Connection
  * @package Kartavik\Kivi
- *
- * @property-read string $host
- * @property-read string $username
- * @property-read string $password
- * @property-read string $database
- * @property-read string $port
- * @property-read string $socket
  */
-final class Connection
+class Connection
 {
     /** @var Connection */
     private static $instance = null;
@@ -64,23 +57,33 @@ final class Connection
             ?? (static::$instance = new Connection($host, $username, $password, $database, $port, $socket));
     }
 
-    public function __get($name)
+    public function host(): string
     {
-        switch ($name) {
-            case 'host':
-                return $this->host;
-            case 'username':
-                return $this->username;
-            case 'password':
-                return $this->password;
-            case 'database':
-                return $this->database;
-            case 'port':
-                return $this->port;
-            case 'socket':
-                return $this->socket;
-            default:
-                throw new \InvalidArgumentException(static::class . " does not contain property: " . $name);
-        }
+        return $this->host;
+    }
+
+    public function username(): string
+    {
+        return $this->username;
+    }
+
+    public function password(): string
+    {
+        return $this->password;
+    }
+
+    public function database(): string
+    {
+        return $this->database;
+    }
+
+    public function port(): string
+    {
+        return $this->port;
+    }
+
+    public function socket(): string
+    {
+        return $this->socket;
     }
 }

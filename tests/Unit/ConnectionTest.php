@@ -42,40 +42,31 @@ class ConnectionTest extends TestCase
 
     public function testGetDatabase(): void
     {
-        $this->assertEquals(static::DATABASE, $this->fakeConnection->database);
+        $this->assertEquals(static::DATABASE, $this->fakeConnection->database());
     }
 
     public function testGetPort(): void
     {
-        $this->assertEquals(static::PORT, $this->fakeConnection->port);
+        $this->assertEquals(static::PORT, $this->fakeConnection->port());
     }
 
     public function testGetPassword(): void
     {
-        $this->assertEquals(static::PASSWORD, $this->fakeConnection->password);
+        $this->assertEquals(static::PASSWORD, $this->fakeConnection->password());
     }
 
     public function testGetHost(): void
     {
-        $this->assertEquals(static::HOST, $this->fakeConnection->host);
+        $this->assertEquals(static::HOST, $this->fakeConnection->host());
     }
 
     public function testGetSocket(): void
     {
-        $this->assertEquals(static::SOCKET, $this->fakeConnection->socket);
+        $this->assertEquals(static::SOCKET, $this->fakeConnection->socket());
     }
 
     public function testGetUsername(): void
     {
-        $this->assertEquals(static::USERNAME, $this->fakeConnection->username);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Kartavik\Kivi\Connection does not contain property: invalidProperty
-     */
-    public function testInvalidProperty(): void
-    {
-        $this->fakeConnection->invalidProperty;
+        $this->assertEquals(static::USERNAME, $this->fakeConnection->username());
     }
 }
