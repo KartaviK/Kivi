@@ -2,7 +2,7 @@
 
 namespace Kartavik\Kivi;
 
-use Kartavik\Kivi\Exceptions\ConnectionException;
+use Kartavik\Kivi\Exception;
 
 /**
  * Class DB
@@ -26,7 +26,7 @@ class DB
      * Open the connection to mysql server
      *
      * @return DB
-     * @throws ConnectionException
+     * @throws Exception\Connection
      */
     public function open(): DB
     {
@@ -40,7 +40,7 @@ class DB
         );
 
         if (!$success) {
-            throw new ConnectionException(static::$mysqli->error, static::$mysqli->errno);
+            throw new Exception\Connection(static::$mysqli->error, static::$mysqli->errno);
         }
 
         return $this;

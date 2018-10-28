@@ -1,12 +1,12 @@
 <?php
 
-namespace Kartavik\Kivi\Exceptions;
+namespace Kartavik\Kivi\Exception;
 
 /**
- * Class ConnectionException
- * @package Kartavik\Kivi\Exceptions
+ * Class Connection
+ * @package Kartavik\Kivi\Exception
  */
-class ConnectionException extends \Exception
+class Connection extends \Exception
 {
     public function __construct(string $message, int $code, \Throwable $previous = null)
     {

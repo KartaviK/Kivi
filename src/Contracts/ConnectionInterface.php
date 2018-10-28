@@ -1,10 +1,10 @@
 <?php
 
-namespace Kartavik\Kivi\Settings;
+namespace Kartavik\Kivi\Contracts;
 
 /**
  * Interface ConnectionInterface
- * @package Kartavik\Kivi\Settings
+ * @package Kartavik\Kivi\Contracts
  */
 interface ConnectionInterface
 {

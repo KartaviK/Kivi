@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:ignore
+
 if (!function_exists('rutime')) {
     function rutime($ru, $rus, $index)
     {

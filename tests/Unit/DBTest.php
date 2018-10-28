@@ -27,6 +27,11 @@ class DBTest extends TestCase
         ));
     }
 
+    public function testInstance(): void
+    {
+
+    }
+
     public static function tearDownAfterClass()
     {
         static::$db->close();
